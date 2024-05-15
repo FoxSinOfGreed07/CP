@@ -128,31 +128,36 @@ void print(Node<T>* head){
 int main(){
     Node<int>* head = NULL;
 
-    insertAtHead(head, 0);
-    insertAtHead(head, 10);
-    insertAtHead(head, 15);
-    insertAtHead(head, 20);
-    insertAtHead(head, 40);
-    insertAtHead(head, 50);
-    insertAtHead(head, 60);
-
-    insertInMiddle(head, 3, 30);
+    for(int i = 1; i<=10; i++){
+        insertAtHead(head, i);
+    }
+    int m = 3, n = 7, count = 1;
     print(head);
-
-    insertAtTail(head, -10);
+    cout<<"________________________ n = "<<n<<" m = "<<m<<" __________________________________________"<<endl;
+    Node<int>* itr = head;
+    Node<int>* nxt = NULL;
+    Node<int>* prev = NULL;
+    Node<int>* start = NULL;
+    Node<int>* end = NULL;
+    while(count != m+1){
+        if(count==m){
+            start = prev;
+        }
+        prev = itr;
+        itr = itr->next;
+        count++;
+    }
+    nxt = itr->next;
+    end = prev;
+    while(count != n+1){
+        itr->next = prev;
+        prev = itr;
+        itr = nxt;
+        nxt = nxt ->next;
+        count++;
+    }
+    // cout<<start->data<<" "<<end->data<<" "<<itr->data<<" "<<prev->data<<endl;
+    start -> next = prev;
+    end -> next = itr;
     print(head);
-
-    deleteHead(head);
-    print(head);
-
-    deleteMiddle(head, 5);
-    print(head);
-
-    deleteTail(head);
-    print(head);
-
-    cout<<search(head, 50)<<endl;
-    cout<<search(head, 30)<<endl;
-    cout<<search(head, 0)<<endl;
-    cout<<search(head, -10)<<endl;
 }

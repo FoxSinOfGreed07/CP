@@ -5,12 +5,12 @@ using namespace std;
 
 void FoxSinOfGreedio();
 
-// template <typename T>
+template <typename T>
 class Graph{
     int V;
-    map< string, vector< pair< string, int > > > g;
+    unordered_map< T, vector< pair< T, int > > > g;
 
-    void addEdge(string v1, string v2, int dist, bool bd){
+    void addEdge(T v1, T v2, int dist, bool bd){
         g[v1].push_back({v2, dist});
         if(bd){
             g[v2].push_back({v1, dist});
@@ -23,13 +23,13 @@ class Graph{
     }
 
     void createGraph(){
-        string v1, v2;
+        T v1, v2;
         int d;
         bool bd;
-        cout<<"Enter the "<<V<<" edges, distances and Bi-Directional Nature:"<<endl;
+        // cout<<"Enter the "<<V<<" edges, distances and Bi-Directional Nature:"<<endl;
         for(int i=0;i<V;i++){
             cin>>v1>>v2>>d>>bd;
-            cout<<v1<<" "<<v2<<" "<<d<<" "<<bd<<endl;
+            // cout<<v1<<" "<<v2<<" "<<d<<" "<<bd<<endl;
             addEdge(v1, v2, d, bd);
         }
     }
@@ -52,7 +52,7 @@ void solve()
 {
     int v;
     cin>>v;
-    Graph g(v);
+    Graph<string> g(v);
     g.createGraph();
     g.printHmap();
 }

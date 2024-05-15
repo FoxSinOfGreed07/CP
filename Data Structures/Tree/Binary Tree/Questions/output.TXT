@@ -1,0 +1,5 @@
+Enter the 3 edges, distances and Bi-Directional Nature:
+
+a: b ~ 20, c ~ 30, 
+b: a ~ 20, c ~ 10, 
+c: b ~ 10, 

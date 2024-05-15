@@ -1,0 +1,240 @@
+{
+  floorValue: '0.05',
+  label: 'AB-$0.05',
+},
+{
+  floorValue: '0.09',
+  label: 'AB-$0.09',
+},
+{
+  floorValue: '0.11',
+  label: 'AB-$0.11',
+},
+{
+  floorValue: '0.18',
+  label: 'AB-$0.18',
+},
+{
+  floorValue: '0.33',
+  label: 'AB-$0.33',
+},
+{
+  floorValue: '0.75',
+  label: 'AB-$0.75',
+},
+{
+  floorValue: '0.99',
+  label: 'AB-$0.99',
+},
+{
+  floorValue: '1.03',
+  label: 'AB-$1.03',
+},
+{
+  floorValue: '1.15',
+  label: 'AB-$1.15',
+},
+{
+  floorValue: '1.55',
+  label: 'AB-$1.55',
+},
+{
+  floorValue: '1.85',
+  label: 'AB-$1.85',
+},
+{
+  floorValue: '10.26',
+  label: 'AB-$10.26',
+},
+{
+  floorValue: '10.5',
+  label: 'AB-$10.5',
+},
+{
+  floorValue: '10.6',
+  label: 'AB-$10.6',
+},
+{
+  floorValue: '105',
+  label: 'AB-$105',
+},
+{
+  floorValue: '11.5',
+  label: 'AB-$11.5',
+},
+{
+  floorValue: '132',
+  label: 'AB-$132',
+},
+{
+  floorValue: '14.06',
+  label: 'AB-$14.06',
+},
+{
+  floorValue: '15.9',
+  label: 'AB-$15.9',
+},
+{
+  floorValue: '162',
+  label: 'AB-$162',
+},
+{
+  floorValue: '18.3',
+  label: 'AB-$18.3',
+},
+{
+  floorValue: '19.5',
+  label: 'AB-$19.5',
+},
+{
+  floorValue: '19.9',
+  label: 'AB-$19.9',
+},
+{
+  floorValue: '2.27',
+  label: 'AB-$2.27',
+},
+{
+  floorValue: '2.42',
+  label: 'AB-$2.42',
+},
+{
+  floorValue: '2.6',
+  label: 'AB-$2.6',
+},
+{
+  floorValue: '20.03',
+  label: 'AB-$20.03',
+},
+{
+  floorValue: '24.9',
+  label: 'AB-$24.9',
+},
+{
+  floorValue: '274.9',
+  label: 'AB-$274.9',
+},
+{
+  floorValue: '28.06',
+  label: 'AB-$28.06',
+},
+{
+  floorValue: '3.9',
+  label: 'AB-$3.9',
+},
+{
+  floorValue: '300',
+  label: 'AB-$300',
+},
+{
+  floorValue: '33',
+  label: 'AB-$33',
+},
+{
+  floorValue: '34.06',
+  label: 'AB-$34.06',
+},
+{
+  floorValue: '36',
+  label: 'AB-$36',
+},
+{
+  floorValue: '4.2',
+  label: 'AB-$4.2',
+},
+{
+  floorValue: '4.7',
+  label: 'AB-$4.7',
+},
+{
+  floorValue: '45.03',
+  label: 'AB-$45.03',
+},
+{
+  floorValue: '46.9',
+  label: 'AB-$46.9',
+},
+{
+  floorValue: '49.9',
+  label: 'AB-$49.9',
+},
+{
+  floorValue: '5.02',
+  label: 'AB-$5.02',
+},
+{
+  floorValue: '5.52',
+  label: 'AB-$5.52',
+},
+{
+  floorValue: '5.6',
+  label: 'AB-$5.6',
+},
+{
+  floorValue: '6.3',
+  label: 'AB-$6.3',
+},
+{
+  floorValue: '6.7',
+  label: 'AB-$6.7',
+},
+{
+  floorValue: '64.02',
+  label: 'AB-$64.02',
+},
+{
+  floorValue: '69.9',
+  label: 'AB-$69.9',
+},
+{
+  floorValue: '7.03',
+  label: 'AB-$7.03',
+},
+{
+  floorValue: '7.1',
+  label: 'AB-$7.1',
+},
+{
+  floorValue: '72.06',
+  label: 'AB-$72.06',
+},
+{
+  floorValue: '75.03',
+  label: 'AB-$75.03',
+},
+{
+  floorValue: '76',
+  label: 'AB-$76',
+},
+{
+  floorValue: '77.5',
+  label: 'AB-$77.5',
+},
+{
+  floorValue: '800.02',
+  label: 'AB-$800.02',
+},
+{
+  floorValue: '825',
+  label: 'AB-$825',
+},
+{
+  floorValue: '89.9',
+  label: 'AB-$89.9',
+},
+{
+  floorValue: '9.9',
+  label: 'AB-$9.9',
+},
+{
+  floorValue: '92',
+  label: 'AB-$92',
+},
+{
+  floorValue: '93',
+  label: 'AB-$93',
+},
+{
+  floorValue: '99.9',
+  label: 'AB-$99.9',
+},

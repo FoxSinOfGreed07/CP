@@ -1,135 +1,92 @@
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
 
-class node{
-    public:
-    int data;
-    node* left;
-    node* right;
-    node(int d){
-        data = d;
-        left = NULL;
-        right = NULL;
-    }
-};
+#define int long long int
+#define endl "\n"
 
-node* buildTree(){
-    int d;
-    cin>>d;
-    if(d == -1){
-        return NULL;
-    }
-    node* root = new node(d);
-    root->left = buildTree();
-    root->right = buildTree();
-    return(root);
-}
+void FoxSinOfGreedio();
 
-int height(node* root){
-    if(root == NULL){
-        return(0);
+void solve()
+{
+    int n;
+    cin>>n;
+    vector<vector<int>> tree;
+    vector<pair<int, int>> visited(n+1);
+    for(int i=0; i<n; i++){
+        int l, r, d;
+        cin>>l>>r>>d;
+        vector<int> v{l, r, d};
+        tree.push_back(v);
+        visited[i+1] = make_pair(0,0);
     }
-    int leftSubtreeHeight = height(root->left);
-    int rightSubtreeHeight = height(root->right);
-    return( max(leftSubtreeHeight, rightSubtreeHeight) + 1);
-}
 
-void printPre(node* root){
-    if(root==NULL){
-        return;
-    }
-    cout<<root->data<<" ";
-    printPre(root->left);
-    printPre(root->right);
-}
+    vector<int> goldArray(n+1);
+    stack<int> dfs;
+    dfs.push(1);
+    int currentNode = 1, left = -1, right = -1;
+    goldArray[1] = tree[0][2];
+    int goldLooted = tree[0][2];
 
-void printIn(node* root){
-    if(root == NULL){
-        return;
-    }
-    printIn(root->left);
-    cout<<root->data<<" ";
-    printIn(root->right);
-}
-
-void printPost(node* root){
-    if(root == NULL){
-        return;
-    }
-    printPost(root->left);
-    printPost(root->right);
-    cout<<root->data<<" ";
-}
-
-void printKthLevel(node* root, int k){
-    if(root == NULL){
-        return;
-    }
-    if(k==1){
-        cout<<root->data<<" ";
-        return;
-    }
-    if(k>1){
-        k--;
-        printKthLevel(root->left, k);
-        printKthLevel(root->right, k);
-    }
-}
-
-void printLevel(node* root){
-    int h = height(root);
-    for(int i=1;i<=h;i++){
-        printKthLevel(root, i);
-        cout<<endl;
-    }
-}
-
-void BFS(node* root){
-    queue<node*> q;
-
-    if(root != NULL){
-        q.push(root);
-        q.push(NULL);
-    }
-    while(!q.empty()){
-        node* n = q.front();
-        if(n==NULL){
-            cout<<endl;
-            q.pop();
-            if(!q.empty()){
-                q.push(NULL);
-            }
-        } else{
-            cout<<n->data<<" ";
-            q.pop();
-
-            if(n->left){
-                q.push(n->left);
-            } 
-            if(n->right){
-                q.push(n->right);
+    // for(auto i:tree){
+    //     cout<<i[0]<<" "<<i[1]<<" "<<i[2]<<endl;
+    // }
+    while(!dfs.empty()){
+        if(visited[currentNode].first == 0){
+            left = tree[currentNode-1][0];
+            visited[currentNode].first = 1;
+            if(left){
+                currentNode = left;
+                goldLooted += tree[currentNode-1][2];
+                goldArray[currentNode] = goldLooted;
+                dfs.push(currentNode);
+                continue;
             }
         }
+        if(visited[currentNode].second == 0){
+            right = tree[currentNode-1][1];
+            visited[currentNode].second = 1;
+            if(right){
+                currentNode = right;
+                goldArray[currentNode] = goldLooted + tree[currentNode-1][2];
+                goldLooted = goldArray[currentNode];
+                dfs.push(currentNode);
+                continue;
+            }
+        }
+        dfs.pop();
+        if(!dfs.empty()){
+            currentNode = dfs.top();
+        }
+    }
+
+    int q; cin>>q;
+    int gold = 0;
+    while(q--){
+        int x,y;
+        cin>>x>>y;
+        gold = goldArray[y-1] - goldArray[x];
+        cout<<gold<<endl;
     }
 }
 
-int main(){
-    node* root = buildTree();
-    printPre(root);
-    cout<<endl;
-    printIn(root);
-    cout<<endl;
-    printPost(root);
-    cout<<endl<<height(root)<<endl;
-    printKthLevel(root, 3);
-    cout<<endl;
-    printLevel(root); // level order print in O[n^2]
-    BFS(root);  // level order print in O[n]
+signed main()
+{
+    FoxSinOfGreedio();
+    int T = 1;
+    //cin>>T;
+    while(T--)
+    {
+        solve();
+    }
 }
 
-// 8 10 1 -1 -1 6 9 -1 -1 7 -1 -1 3 -1 14 13 -1 -1 -1
-
-//                           8
-//                   10           3
-//                1      6          14
-//                     9   7     13
+void FoxSinOfGreedio()
+{
+    ios::sync_with_stdio(false);
+    cin.tie(NULL);
+    cout.tie(NULL);
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif
+}

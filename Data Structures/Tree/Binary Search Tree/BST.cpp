@@ -6,16 +6,25 @@ class node{
     int data;
     node* left;
     node* right;
-    node(int d){
+
+    node(int l, int r, int d){
         data = d;
-        left = NULL;
-        right = NULL;
+        if(l){
+            left = l;
+        } else{
+            left = NULL;
+        }
+        if(r){
+            right = r;
+        } else{
+            right = NULL;
+        }
     }
 };
 
-node* insertInBST(node* root, int d){
+node* insertInBST(node* root, int d, int l, int r){
     if(root == NULL){
-        root = new node(d);
+        root = new node(l, r, d);
         return(root);
     }
     if(d <= root->data){
